@@ -1,0 +1,53 @@
+1. What is the difference between the following selectors?
+
+```
+.one .two		/* any markup with a class "two" within a class "one"
+.one > .two		/* markup where class "two" is a direct descendent of class "one"
+```
+
+2. What color is the div? /* red, class precedence is higher than descendent and '.one .two' is more specific than just '.two' */
+
+```
+.one > .two
+{
+	color: green;
+}
+
+.one .two
+{
+	color: red;
+}
+
+.two
+{
+	color: blue;
+}
+
+<div class="one">
+<div class="two">what color am I?</div>
+</div>
+```
+ "
+3. What selector would you use to target the specified element? /* .one .two:nth-last-child(2) */
+
+```
+<div class="one">
+<div class="three"></div>
+<div class="two"></div>
+<div class="three"></div>
+<div class="two">select me only</div>
+<div class="three"></div>
+</div>
+```
+
+4. What selector would you use to target the specified element?  /* #e because the list contains unique ids and the id selector has the highest precedence */
+
+```
+<div class="one" id="a">
+<div class="three" id="b"></div>
+<div class="two" id="c"></div>
+<div class="three" id="d"></div>
+<div class="two" id="e">select me only</div>
+<div class="three" id="f"><div>
+</div>
+```

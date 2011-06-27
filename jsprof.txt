@@ -1,0 +1,76 @@
+1. What core types are available in JavaScript. /* number, string, boolean, null, undefined.  Also consider object and function */
+
+2. Show the contents of `bar` without referring to it directly. /* window[foo] */
+
+```
+var foo = 'bar';
+var bar = 'show me';
+```
+
+3.  What is the output at the referenced points? 
+
+```
+var Test = function() { this.one = 'a'; };
+
+Test.prototype.two = 'b';
+
+var a = new Test();
+
+console.log(a.one); // what does this log? /* a */
+console.log(a.two); // what does this log? /* b */
+
+Test.prototype = {
+	two: 'c'
+};
+
+var b = new Test();
+
+console.log(a.two); // what does this log? /* b, because the prototype object is overwritten after 'b' has been assigned to the
+                                              prototype of the Test object.  a.two would be the value of the prototype at the time 
+                                              the a instance was created or any updates to the prototype reference before the
+                                              prototype object was overwritten, as it was done when two was set to 'c'. */
+console.log(b.two); // what does this log? /* c */
+```
+
+4.  What is the result of the following? /* returns 9 since when function(y) is called, x stays at 3, y is 4 (passed in), and z is 2.  3 + 4 + 2 = 9. */
+
+```
+(function(x) {
+	var y = 1,
+		z = 2;
+	return function(y) {
+		return x + y + z;
+	};
+})(3)(4);
+```
+
+5.  What is the output at the referenced points? 
+
+```
+var Test = function() { this.one = 'a'; };
+
+Test.prototype.two = 'b';
+
+var a = new Test();
+
+console.log(a.hasOwnProperty('one')); // what does this log? /* true */
+console.log(a.hasOwnProperty('two')); // what does this log? /* false */
+```
+
+6.  What is the difference between the two blocks? /* x is a global variable in block 1 and a local variable in block 2 */
+
+```
+var run = function() {
+	x = 5;
+};
+run();
+```
+
+```
+var run = function() {
+	var x = 5;
+};
+run();
+```
+
+7.  /(bb|[^b]{2})/  /* 2b or not 2b, very funny */
