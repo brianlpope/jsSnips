@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+	<h2>Javascript</h2>
+	<script type="text/javascript" src="Util.js"></script>
+	<script type="text/javascript">
+		bp.util.namespace.create('Bravo.Tango.Charlie');
+		document.write((typeof bp.util === 'object') ? "bp.util OK" : "bp.util not found");
+		document.write("<br />");
+		document.write((typeof Bravo === 'object') ? "Bravo OK" : "Bravo not found");
+		document.write("<br />");
+		document.write((typeof Bravo !== 'undefined' && typeof Bravo.Tango === 'object') ? "Bravo.Tango OK" : "Bravo.Tango not found");
+		document.write("<br />");
+		document.write((typeof Bravo.Tango !== 'undefined' && typeof Bravo.Tango.Charlie === 'object') ? "Bravo.Tango.Charlie OK" : "Bravo.Tango.Charlie not found");
+	</script>
+</body>
+</html>
