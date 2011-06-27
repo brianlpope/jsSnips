@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<script type="text/javascript" src="boardGame.js"></script>
+</head>
+<body>
+<div>
+<p>
+Given the following game rules and a game board consisting of an array of numbers greater or equal to zero, write code (C#, pseudo code, whatever) to determine if the board is solvable, in that, the end of the board is able to be reached. 
+</p>
+<p>
+Rules:
+</p><p>
+1.	You start at the first position on the board.
+2.	From any given space on the board you may move forward any number of spaces up to the number indicated on your current space.
+</p><p>
+Example #1:
+</p><p>
+Board: [1,2,0,2]
+</p><p>
+From #0 you can move to #1 only.  From #1, you can move either to #2 or #3.  #2 is not a valid move, as you cannot move after that.  Since you can move to #3, the board is solvable.
+</p><p>
+Example #2:
+</p><p>
+Board: [2,2,0,0,1]
+</p><p>
+From #0 you can move to #1 or #2 only.  Since #2 is 0, and is not the end of the board, you cannot move past there, and as such, #2 is not a valid move.  However, from #1, you can move either to #2 or #3, but since both #2 and #3 are zero, you cannot move forward past them, hence the board is not solvable.
+</p>
+<p>
+Run some tests:
+</p>
+</div>
+	<script type="text/javascript">
+		(function() {
+	var boards = [
+		[4,0,3,1,0,1],
+		[1,2,1,1,0,1],
+		[0],
+		[0,1],
+		[1,0],
+		[2,2,0,0,1],
+		[1,2,0,2],
+		[4,0,5,0,2,0,0,1]
+	];
+
+	for (var x = 0; x < boards.length; x++) { // for each board
+		var solvable = testBoard(boards[x]);
+		document.write(boards[x] + (solvable ? ' solvable' : ' not solvable')+'<br />');
+	}
+})();
+	</script>
+</body>
+</html>
