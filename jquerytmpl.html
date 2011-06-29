@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<style type="text/css" rel="stylesheet">
+		ul
+		{
+			list-style-type: none;
+		}
+		p
+		{
+			padding: 0;
+			margin: 0;
+		}
+		h3
+		{
+			margin-bottom: 2px;
+		}
+	</style>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+</head>
+<body>
+	<h2>JQuery Template</h2>
+	<script id="bookTemplate"  type="text/javascript">
+		<li>
+			<h3>${Title}</h3>
+			<p>Author: ${Author}</p>
+			<p>Publisher: ${Publisher}</p>
+			<p>Copyright: ${Copyright}</p>
+		</li>
+	</script>
+	
+	<ul id="bookList"></ul>
+	
+	
+	<script type="text/javascript">
+		var books = [
+			{ Title: "Where the Red Fern Grows", Author: "Rawls, Wilson", Publisher: "Doubleday", Copyright: "1961" },
+			{ Title: "For Whom the Bell Tolls", Author: "Hemingway, Ernest", Publisher: "Charles Scribner's Sons", Copyright: "1940" },
+			{ Title: "Where the Sidewalk Ends", Author: "Silverstein, Shel", Publisher: "Harper and Row Publishers", Copyright: "1974" }
+			];
+
+		// identify the movieTemplate script that takes the movies object as 
+		// an argument and append the results to the moveList ul markup.
+		$( "#bookTemplate" ).tmpl( books )
+		.appendTo( "#bookList" );
+	</script>
+</body>
+</html>
