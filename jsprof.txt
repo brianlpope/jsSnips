@@ -1,4 +1,5 @@
-1. What core types are available in JavaScript. /* number, string, boolean, null, undefined.  Also consider object and function */
+1. What core types are available in JavaScript. /* number, string, boolean, null, undefined.  
+                                                   Also consider object and function */
 
 2. Show the contents of `bar` without referring to it directly. /* window[foo] */
 
@@ -25,14 +26,17 @@ Test.prototype = {
 
 var b = new Test();
 
-console.log(a.two); // what does this log? /* b, because the prototype object is overwritten after 'b' has been assigned to the
-                                              prototype of the Test object.  a.two would be the value of the prototype at the time 
-                                              the a instance was created or any updates to the prototype reference before the
-                                              prototype object was overwritten, as it was done when two was set to 'c'. */
+console.log(a.two); // what does this log? /* b, because the prototype object is overwritten after 'b' has been assigned
+                                              to the prototype of the Test object.  a.two would be the value of the 
+                                              prototype at the time the a instance was created or any updates to the 
+                                              prototype reference before the prototype object was overwritten, as it was
+                                              done when two was set to 'c'. */
 console.log(b.two); // what does this log? /* c */
 ```
 
-4.  What is the result of the following? /* returns 9 since when function(y) is called, x stays at 3, y is 4 (passed in), and z is 2.  3 + 4 + 2 = 9. */
+4.  What is the result of the following? /* returns 9 since the first call is passed a 3 and returns a function 
+                                            where x=3, y=1, and z=2.  The second call executes the returned function 
+                                            where a closure keeps x=3 and z=2 and y is passed in as 4.  So 3+4+2=9. */
 
 ```
 (function(x) {
@@ -57,7 +61,8 @@ console.log(a.hasOwnProperty('one')); // what does this log? /* true */
 console.log(a.hasOwnProperty('two')); // what does this log? /* false */
 ```
 
-6.  What is the difference between the two blocks? /* x is a global variable in block 1 and a local variable in block 2 */
+6.  What is the difference between the two blocks? /* x is a global variable in block 1 and a local variable 
+                                                      in block 2 */
 
 ```
 var run = function() {
