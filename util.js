@@ -34,6 +34,7 @@ if(typeof bp.util.namespace === 'undefined') {
 			}
 		};
 		
+                // the public method returned from this object is called 'create'.  That poings to the private createNS function above.
 		return {
 			create: createNS
 		};
