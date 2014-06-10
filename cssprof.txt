@@ -28,7 +28,7 @@
 </div>
 ```
  "
-3. What selector would you use to target the specified element? /* .one .two:nth-last-child(2) */
+3. What selector would you use to target the specified element? /* .one .two:nth-last-child(2). note: could also use .one .two:nth-child(4). */
 
 ```
 <div class="one">
