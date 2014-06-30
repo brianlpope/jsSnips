@@ -1,3 +1,5 @@
+Javascript test
+
 1. What core types are available in JavaScript. /* number, string, boolean, null, undefined.  
                                                    Also consider object and function */
 
