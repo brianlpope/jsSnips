@@ -1,4 +1,4 @@
-Javascript tests
+Javascript tests for potential candidates
 
 1. What core types are available in JavaScript. /* number, string, boolean, null, undefined.  
                                                    Also consider object and function */
